@@ -3,7 +3,13 @@ from rest_framework.serializers import HyperlinkedModelSerializer
 from .models import CustomUser
 
 
-class UserModelSerializer(HyperlinkedModelSerializer):
+class CustomUserModelSerializer(HyperlinkedModelSerializer):
     class Meta:
         model = CustomUser
-        fields = '__all__'
+        fields = [
+            'username',
+            'first_name',
+            'last_name',
+            'birthday_year',
+            'email',
+        ]
