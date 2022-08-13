@@ -19,6 +19,7 @@ distlib==0.3.0
 distro==1.4.0
 distro-info===0.23ubuntu1
 Django==3.2
+django-cors-headers==3.13.0
 djangorestframework==3.13.1
 duplicity==0.8.12.0
 entrypoints==0.3
@@ -94,3 +95,4 @@ wadllib==1.3.3
 xkit==0.0.0
 zeroconf==0.24.4
 zipp==3.8.1
+zlib-wrapper==0.1.3
