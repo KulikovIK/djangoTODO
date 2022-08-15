@@ -12,6 +12,9 @@ class CustomUser(AbstractUser):
     birthday_year = models.PositiveIntegerField(**NULLABLE, verbose_name='год рождения')
     email = models.EmailField(**NULLABLE, unique=True, verbose_name='емаил')
 
+    def __str__(self):
+        return self.username
+
     class Meta:
         verbose_name = 'пользователь'
         verbose_name_plural = 'пользователи'
