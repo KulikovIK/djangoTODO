@@ -1,22 +1,22 @@
 import React from 'react'
 
-const UserItem = ({customuser}) => {
+const UserItem = ({user}) => {
     return (
         <tr>
             <td>
-                {customuser.username}
+                {user.username}
             </td>
             <td>
-                {customuser.first_name}
+                {user.first_name}
             </td>
             <td>
-                {customuser.last_name}
+                {user.last_name}
             </td>
             <td>
-                {customuser.birthday_year}
+                {user.birthday_year}
             </td>
             <td>
-                {customuser.email}
+                {user.email}
             </td>
         </tr>
     )
@@ -24,13 +24,7 @@ const UserItem = ({customuser}) => {
 
 const UserList = ({customuser}) => {
     return (
-        <div>
-            <div>
-                <a href="#"> Menu </a>
-                <a href="#"> Folder </a>
-            </div>
             <table>
-
                 <th>
                     User name
                 </th>
@@ -46,10 +40,8 @@ const UserList = ({customuser}) => {
                 <th>
                     Email
                 </th>
-                {customuser.map((customuser) => <UserItem customuser={customuser} />)}
+                {customuser.map((user) => <UserItem user={user} />)}
             </table>
-        </div>
-
     )
 }
 
