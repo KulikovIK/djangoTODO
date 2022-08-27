@@ -2,7 +2,6 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 
 const ProjectItem = ({project}) => {
-    console.log(project.id)
     return (
         <tr>
             <td>
