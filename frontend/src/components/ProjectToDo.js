@@ -24,7 +24,7 @@ const ToDoItem = ({todoItem}) => {
 const ProjectToDoList = ({todo}) => {
     var params = useParams()
 
-    var filteredToDo = todo.filter((todoItem) => todoItem.project == parseInt(params.projectId))
+    var filteredToDo = todo.filter((todoItem) => todoItem.project === parseInt(params.projectId))
 
     return (
             <table>
