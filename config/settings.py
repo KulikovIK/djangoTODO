@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django_filters',
     'drf_yasg',
     'corsheaders',
+    'graphene_django',
     'rest_framework',
     'rest_framework_simplejwt',
 
@@ -93,6 +94,10 @@ DATABASES = {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
+}
+
+GRAPHENE = {
+    'SCHEMA': 'todo.schema.schema'
 }
 
 
