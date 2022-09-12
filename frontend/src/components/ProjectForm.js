@@ -1,7 +1,7 @@
 import React from "react";
 
 
-class LoginForm extends React.Component {
+class ProjectForm extends React.Component {
     constructor (props) {
         super(props)
         this.state = {
@@ -21,7 +21,7 @@ class LoginForm extends React.Component {
     };
 
     handleUserSelect(event) {
-        if (!vent.target.selectedOptions) {
+        if (!event.target.selectedOptions) {
             this.setState (
                 {
                     'users': []
@@ -30,7 +30,7 @@ class LoginForm extends React.Component {
             return;
         }
         let users = []
-        for (let option of vent.target.selectedOptions) {
+        for (let option of event.target.selectedOptions) {
             users.push(option.value);
         }
         this.setState (
@@ -38,13 +38,14 @@ class LoginForm extends React.Component {
                 'users': users
             }
         );
-
     }
 
     handelSubmit(event) {
-        console.log(this.state.title)
-        console.log(this.state.repository)
-        console.log(this.state.users)
+        this.props.createProject(
+            this.state.title,
+            this.state.repository,
+            this.state.users,
+            )
         event.preventDefault()
     };
 
@@ -65,10 +66,11 @@ class LoginForm extends React.Component {
                     value={ this.state.repository }
                     onChange={(event) => this.handleChange(event)}
                 />
+                
                 <select multiple onChange={(event) => this.handleUserSelect(event)}>
-                    {this.props.users.map((customusers) => 
-                        <option value={customusers.id}>
-                            {customusers.username}
+                    {this.props.customuser.map((customuser) => 
+                        <option value={customuser.id}>
+                            {customuser.username}
                         </option>)}
                 </select>
                 <input
